@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Редактирование статьи</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+    <h5>Blog</h5>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/blog">Блог</a>
+        <a href="/blog/add">Добавить статью</a>
+        <a href="/about">Про нас</a>
+    </nav>
+</div>
+
+<div>
+    <h1>Редактирование статьи</h1>
+    <div th:each="el : ${post}">
+        <form method="post">
+            <input type="text" th:value="${el.title}" name="title" placeholder="Введите название статьи"/><br><br>
+            <textarea name="full_text" placeholder="Введите полный текст статьи" th:text="${el.full_text}" /><br><br>
+            <button type="submit">Обновить статью</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

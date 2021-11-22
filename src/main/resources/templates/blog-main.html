@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Блог сайта</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+    <h5>Blog</h5>
+    <nav>
+        <a href="/">Главная</a>
+        <a href="/blog">Блог</a>
+        <a href="/blog/add">Добавить статью</a>
+        <a href="/about">Про нас</a>
+    </nav>
+</div>
+
+<div>
+    <h1>Блог сайта</h1>
+    <div th:each="el : ${posts}">
+        <h3 th:text="${el.title}"></h3>
+        <a th:href="'/blog/' + ${el.id}">Детальнее</a>
+    </div>
+
+</div>
+</body>
+</html>
